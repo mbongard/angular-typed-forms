@@ -1,0 +1,53 @@
+.home {
+  margin: 20vh auto auto;
+  width: 25rem;
+}
+
+.tab-view {
+  width: 25rem;
+}
+
+::ng-deep {
+  .p-tabview-nav-container {
+    margin-bottom: 3.5rem;
+  }
+
+  .p-tabview-nav {
+    display: flex;
+
+    li {
+      flex: 1;
+    }
+  }
+
+  .p-tabview .p-tabview-panels {
+    padding: 0;
+  }
+}
+
+.tab-header {
+  margin: auto;
+
+  span {
+    margin-left: 0.75rem;
+  }
+}
+
+.tab-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  width: 25rem;
+}
+
+.submit-btn {
+  align-self: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #e24c4c;
+}

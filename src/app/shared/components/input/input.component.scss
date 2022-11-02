@@ -1,0 +1,36 @@
+:host {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+.ng-invalid.ng-touched {
+  border-color: #cc0000;
+}
+
+.ng-dirty + label {
+  color: #6c757d;
+}
+
+.input-wrapper {
+  margin: 0;
+}
+
+::ng-deep {
+  .p-float-label {
+    label {
+      margin-top: -0.75rem;
+    }
+
+    input:focus,
+    input.p-filled {
+      & ~ label {
+        top: -0.25rem;
+        background-color: white;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+  }
+}

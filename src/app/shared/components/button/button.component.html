@@ -1,0 +1,20 @@
+<button
+  [ngClass]="{
+    'success': type === 'success',
+    'danger': type === 'danger',
+    'flex-row-reverse': iconPlacement === 'right',
+    'rounded': rounded,
+    'inverted': inverted,
+    'w-full': fullWidth,
+    'large': size === 'large'
+  }"
+  [disabled]="disabled"
+  (click)="btnClick.emit($event)"
+>
+  <ng-container *ngIf="icon">
+    <fa-icon [icon]="icon"></fa-icon>
+  </ng-container>
+  <ng-container *ngIf="label">
+    <div>{{label}}</div>
+  </ng-container>
+</button>

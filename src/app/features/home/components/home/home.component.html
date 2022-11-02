@@ -1,0 +1,73 @@
+<div class="home">
+  <p-tabView class="tab-view" (onChange)="updateTab($event.index === 0 ? 'login' : 'register')">
+    <p-tabPanel [selected]="selectedTab === 'login'">
+      <ng-template pTemplate="header">
+        <div class="tab-header">
+          <fa-icon [icon]="['fas', 'right-to-bracket']"></fa-icon>
+          <span>Login</span>
+        </div>
+      </ng-template>
+      <div *ngIf="loginForm" class="tab-body" (keyup.enter)="login()">
+        <app-control-error [control]="loginForm.controls.email">
+          <app-input
+            [control]="loginForm.controls.email"
+            label="Email address"
+          ></app-input>
+        </app-control-error>
+
+        <app-control-error [control]="loginForm.controls.password">
+          <app-input
+            inputType="password"
+            [control]="loginForm.controls.password"
+            label="Password"
+          ></app-input>
+        </app-control-error>
+
+        <app-button
+          class="submit-btn"
+          label="Log in"
+          [fullWidth]="true"
+          [disabled]="!loginForm.valid"
+          size="large"
+          (btnClick)="login()"
+        ></app-button>
+
+        <div class="error" *ngIf="loginError">{{ loginError }}</div>
+      </div>
+    </p-tabPanel>
+
+    <p-tabPanel [selected]="selectedTab === 'register'">
+      <ng-template pTemplate="header">
+        <div class="tab-header">
+          <fa-icon [icon]="['fas', 'user-plus']"></fa-icon>
+          <span>Sign Up</span>
+        </div>
+      </ng-template>
+      <div *ngIf="signUpForm" class="tab-body" (keyup.enter)="signUp()">
+        <app-control-error [control]="signUpForm.controls.name">
+          <app-input [control]="signUpForm.controls.name" label="Your name"></app-input>
+        </app-control-error>
+
+        <app-control-error [control]="signUpForm.controls.email">
+          <app-input
+            [control]="signUpForm.controls.email"
+            label="Email address"
+          ></app-input>
+        </app-control-error>
+
+        <app-new-password
+          [formGroup]="signUpForm.controls.passwordGroup"
+        ></app-new-password>
+
+        <app-button
+          class="submit-btn"
+          label="Sign up"
+          [fullWidth]="true"
+          [disabled]="!signUpForm.valid"
+          size="large"
+          (btnClick)="signUp()"
+        ></app-button>
+      </div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

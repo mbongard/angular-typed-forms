@@ -1,0 +1,20 @@
+:host {
+  width: 100%;
+}
+
+.form-error {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  --font-size: 1.2rem;
+  --padding-y: 0.5rem;
+
+  min-height: calc(var(--font-size) + 2 * var(--padding-y));
+  font-size: var(--font-size);
+  line-height: var(--font-size);
+  padding: var(--padding-y) 0.5rem;
+
+  color: #e24c4c;
+}

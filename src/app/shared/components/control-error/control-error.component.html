@@ -1,0 +1,8 @@
+<div class="form-error" #errorsRef>
+  <ng-content></ng-content>
+  <div class="error">
+    <p *ngFor="let error of errors" class="m-0">
+      {{ error }}
+    </p>
+  </div>
+</div>
